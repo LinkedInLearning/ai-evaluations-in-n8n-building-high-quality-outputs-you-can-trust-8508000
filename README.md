@@ -1,5 +1,5 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+# AI Evaluations in n8n: Building High-Quality Outputs You Can Trust
+This is the repository for the LinkedIn Learning course `AI Evaluations in n8n: Building High-Quality Outputs You Can Trust`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![lil-thumbnail-url]
 
