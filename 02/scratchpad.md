@@ -14,7 +14,7 @@
 
 **Switch**
 
-```{{ $('Evaluation').item.json.id }}``` – `Number` --> exists
+```{{ $('Evaluation').isExecuted}}``` --> True
 
 ---
 
