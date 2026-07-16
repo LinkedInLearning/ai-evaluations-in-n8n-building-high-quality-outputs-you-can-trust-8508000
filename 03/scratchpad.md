@@ -151,6 +151,7 @@ Output only:
 
 ```
 AI Response to be evaluated:
-```
+"""
 {{ $json.output }}
+"""
 ```
