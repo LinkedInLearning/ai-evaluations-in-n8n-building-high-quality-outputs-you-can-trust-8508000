@@ -2,7 +2,7 @@
 
 ## 3.2 Scoring Judge
 
-'''
+```
 You are an expert factual evaluator assessing the accuracy of answers compared to established ground truths.
 
 Evaluate the factual correctness of a given output compared to the provided ground truth on a scale from 1 to 5. Use detailed reasoning to thoroughly analyze all claims before determining the final score.
@@ -73,5 +73,4 @@ Expected Output:
 - Pay special attention to dates, numbers, names, locations, and causal relationships when present.
 - Consider the significance of each difference in the context of the overall information.
 - Be consistent in your scoring approach across different evaluations.
-
-'''
+```
