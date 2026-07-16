@@ -133,12 +133,13 @@ Output only:
   "type": "object",
   "properties": {
     "check": {
-      "type": "string",
-      "enum": ["yes", "no"]
+      "type": "integer",
+      "enum": [1, 0],
+      "description": "1 = faithful, 0 = not faithful"
     },
     "reason": {
       "type": "string",
-      "description": "Brief explanation of the faithfulness judgment."
+      "description": "Brief explanation of the judgment."
     }
   },
   "required": ["check", "reason"],
