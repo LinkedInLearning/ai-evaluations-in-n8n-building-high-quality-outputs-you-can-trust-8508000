@@ -1,5 +1,5 @@
 {
-  "name": "02_02 Exact",
+  "name": "02_02 Exact Match",
   "nodes": [
     {
       "parameters": {
@@ -8,12 +8,12 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.4,
       "position": [
-        208,
-        192
+        608,
+        80
       ],
-      "id": "89130a3e-1dfc-40d7-a93e-5a4f5914d3b3",
+      "id": "21c42f22-2b41-4b7d-a930-be2077780930",
       "name": "When chat message received",
-      "webhookId": "5b3a05e2-c4dc-4c2a-8cc4-975a76deb2c3"
+      "webhookId": "37de2965-fb98-4338-9c77-2586e8dbf898"
     },
     {
       "parameters": {
@@ -28,10 +28,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        560,
-        96
+        960,
+        -16
       ],
-      "id": "79d1ace7-ff41-4720-896d-74fab5c2f197",
+      "id": "822ae17e-bdd0-472c-ad67-3939a2bf86db",
       "name": "AI Agent",
       "alwaysOutputData": true
     },
@@ -51,15 +51,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        432,
-        320
+        832,
+        208
       ],
-      "id": "c013099e-da05-4eef-be27-52c3791a1b7d",
+      "id": "e81c61f7-198a-474f-b74e-898b0ba8d5ef",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "vIt4XIujtaBmV5aq",
-          "name": "OpenAi account"
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
         }
       }
     },
@@ -87,16 +87,16 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        688,
-        320
+        1088,
+        208
       ],
-      "id": "06475557-24c9-444f-862b-2773e3c8679d",
+      "id": "d74db7af-a6fb-44ca-a78b-5a8bb734786a",
       "name": "List files",
-      "webhookId": "bb5144d9-fc27-4314-9bbe-a26476fd0783",
+      "webhookId": "ec4fd2ec-ed50-44da-8e68-a81715114ef1",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "BDKhLeCuiTCLgdPy",
+          "name": "GitHub OAuth2 API"
         }
       }
     },
@@ -105,10 +105,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.4,
       "position": [
-        560,
-        320
+        960,
+        208
       ],
-      "id": "a36b2f32-1e43-4f1f-bdbe-3a610a0803ab",
+      "id": "26b96649-effe-4043-aa2d-9285de3c9902",
       "name": "Simple Memory",
       "alwaysOutputData": false
     },
@@ -132,15 +132,15 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        816,
-        320
+        1216,
+        208
       ],
-      "id": "61e24d07-03cc-4f93-93f0-a6b3a94988cd",
+      "id": "4af4816b-0684-4e7c-b6e2-7e52bc8e5765",
       "name": "Download File",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -149,10 +149,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -464,
-        0
+        -64,
+        -112
       ],
-      "id": "9684d82e-4bbc-4535-a660-f693465cf628",
+      "id": "74a5da97-6fed-40d7-9f7d-563da5848fd2",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -160,20 +160,19 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
+          "value": "MsPY6emQzrsqpTfD",
           "mode": "list",
           "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
-        },
-        "returnAll": true
+          "cachedResultUrl": "/projects/ILTEhfNZ9jgFvbW7/datatables/MsPY6emQzrsqpTfD"
+        }
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        -240,
-        0
+        160,
+        -112
       ],
-      "id": "03989b70-636d-4818-aa5c-4bf78c144c88",
+      "id": "7c9a5eee-43de-4f0b-ab9a-f2a033090ef5",
       "name": "Get row(s)"
     },
     {
@@ -183,10 +182,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -16,
-        0
+        384,
+        -112
       ],
-      "id": "9b978d63-a221-4ab3-be37-ba2d91e64366",
+      "id": "34f82a8b-b211-4d6c-8685-ba74db29c9c0",
       "name": "Loop Over Items"
     },
     {
@@ -194,14 +193,14 @@
         "assignments": {
           "assignments": [
             {
-              "id": "bea65fd4-2290-47d1-b2b7-9b15afdc3b87",
+              "id": "f4d3f1ea-881c-427f-afbd-30c6b0723575",
               "name": "chatInput",
               "value": "={{ $json.question }}",
               "type": "string"
             },
             {
-              "id": "167f5b14-b87e-40c4-b343-455e1e8858b3",
-              "name": "=sessionId",
+              "id": "aa12f2ea-1285-42a2-a3d1-ee7cb81593b7",
+              "name": "sessionId",
               "value": "={{$now.toMillis()}}",
               "type": "string"
             }
@@ -213,60 +212,20 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        0
+        608,
+        -112
       ],
-      "id": "0f3cda7b-a107-4b72-a0f8-599a54eb37e2",
+      "id": "1511286e-6f2f-47c8-ad98-1f1a883d6eb6",
       "name": "Evaluation"
-    },
-    {
-      "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 3
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $('Evaluation').item.json.id }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "number",
-                      "operation": "exists",
-                      "singleValue": true
-                    },
-                    "id": "67eb8ebb-d097-4850-ac27-800c354768b6"
-                  }
-                ],
-                "combinator": "and"
-              }
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.4,
-      "position": [
-        912,
-        96
-      ],
-      "id": "2a6f9c7e-9f9e-41d2-bdb9-71ce8cffee01",
-      "name": "Switch"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "c1f3d2d7-8e44-4591-8cf1-0a8a30865fa8",
+              "id": "e311d213-59ef-405d-ab57-4d8c2cd2d03d",
               "name": "source_count",
-              "value": "={{\n  /Sources:\\s*\\r?\\n/.test($json.output)\n    ? $json.output\n        .split(/Sources:\\s*\\r?\\n/)[1]\n        .split(/\\r?\\n/)\n        .filter(line => line.trim() !== '')\n        .length\n    : 0\n}}",
+              "value": "={{   /Sources:\\s*\\r?\\n/.test($json.output)     ? $json.output         .split(/Sources:\\s*\\r?\\n/)[1]         .split(/\\r?\\n/)         .filter(line => line.trim() !== '')         .length     : 0 }}",
               "type": "string"
             }
           ]
@@ -276,11 +235,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1120,
-        96
+        1520,
+        -16
       ],
-      "id": "f5613a9d-2d2f-4e00-8884-7bb94372555a",
-      "name": "Number of sources"
+      "id": "4fdf2ee1-08ae-45a3-b92f-3566845c8d74",
+      "name": "Number of Sources"
     },
     {
       "parameters": {
@@ -295,10 +254,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        1328,
-        96
+        1728,
+        -16
       ],
-      "id": "417538df-7b28-4603-924b-f9cf0ce18321",
+      "id": "1f742692-6879-47a6-97dc-eb7edf37ad12",
       "name": "eval_source_count"
     },
     {
@@ -306,10 +265,10 @@
         "operation": "update",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
+          "value": "MsPY6emQzrsqpTfD",
           "mode": "list",
           "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
+          "cachedResultUrl": "/projects/ILTEhfNZ9jgFvbW7/datatables/MsPY6emQzrsqpTfD"
         },
         "filters": {
           "conditions": [
@@ -382,11 +341,53 @@
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        1536,
-        96
+        2096,
+        -16
       ],
-      "id": "915b4a18-2e8b-42bd-96b8-ca1c432eeef8",
+      "id": "591dfcd9-31a9-4246-b5b9-8b75f1ff2236",
       "name": "Update row(s)"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Evaluation').isExecuted}}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "0ae3bb2c-effb-4b56-8946-bdf645d025ab"
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1296,
+        -16
+      ],
+      "id": "daec4304-fa5a-4bcf-afbd-d2e90c2ed765",
+      "name": "Switch"
     }
   ],
   "pinData": {},
@@ -396,17 +397,6 @@
         [
           {
             "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -457,6 +447,17 @@
         ]
       ]
     },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "When clicking ‘Execute workflow’": {
       "main": [
         [
@@ -502,18 +503,7 @@
         ]
       ]
     },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Number of sources",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Number of sources": {
+    "Number of Sources": {
       "main": [
         [
           {
@@ -545,6 +535,22 @@
           }
         ]
       ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Number of Sources",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -553,11 +559,12 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "513f6f35-701f-4099-8fca-365257f09181",
+  "versionId": "ff20f1a5-2d51-4812-bebe-f1df1ad92246",
   "meta": {
-    "instanceId": "94e1edcc34a91a151fc2ec1b99597068a304e37fdb946fc806f00f97776fce3a"
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d4a4b34dba3ee3b7962c8920f1d1ae2e83302284e2d9036f405c172286e6d2fe"
   },
   "nodeGroups": [],
-  "id": "y5MXLR5nbgv36GZe",
+  "id": "trSMEuwmkeEJuDYL",
   "tags": []
 }

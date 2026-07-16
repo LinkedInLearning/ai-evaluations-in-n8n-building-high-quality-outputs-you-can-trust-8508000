@@ -1,5 +1,5 @@
 {
-  "name": "02_03 Similarity",
+  "name": "02_03 Similarity Match",
   "nodes": [
     {
       "parameters": {
@@ -8,12 +8,12 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.4,
       "position": [
-        208,
-        192
+        608,
+        80
       ],
-      "id": "f3a007f5-f077-44bd-a2f5-e6ef35afbe94",
+      "id": "b5e2b804-893a-4b68-9f8f-b4cc288dd91f",
       "name": "When chat message received",
-      "webhookId": "12ff9828-6d8b-45b6-b345-3779af6328cb"
+      "webhookId": "5b3a05e2-c4dc-4c2a-8cc4-975a76deb2c3"
     },
     {
       "parameters": {
@@ -28,10 +28,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        560,
-        96
+        960,
+        -16
       ],
-      "id": "3cf49625-92dd-4043-893b-de1d84efec31",
+      "id": "1d63bc2a-5954-42af-835b-f102a0619279",
       "name": "AI Agent",
       "alwaysOutputData": true
     },
@@ -51,15 +51,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        432,
-        320
+        832,
+        208
       ],
-      "id": "00592a89-fe1d-4aa5-bba0-6bea4c22796a",
+      "id": "6857a3c1-804b-4393-bf71-148f27f181bf",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "vIt4XIujtaBmV5aq",
-          "name": "OpenAi account"
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
         }
       }
     },
@@ -87,16 +87,16 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        688,
-        320
+        1088,
+        208
       ],
-      "id": "3fa84b48-c714-4cc9-aaa9-4fa857deb9bb",
+      "id": "1dd605da-266b-42e5-83a3-da18198e0939",
       "name": "List files",
-      "webhookId": "22a602a0-c707-4161-91a2-f21c8917f0f3",
+      "webhookId": "bb5144d9-fc27-4314-9bbe-a26476fd0783",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "BDKhLeCuiTCLgdPy",
+          "name": "GitHub OAuth2 API"
         }
       }
     },
@@ -105,10 +105,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.4,
       "position": [
-        560,
-        320
+        960,
+        208
       ],
-      "id": "b08bf698-37c7-44e4-b3cd-efeec6118c57",
+      "id": "fe7774b4-f672-4b19-9089-d7280e389812",
       "name": "Simple Memory",
       "alwaysOutputData": false
     },
@@ -132,15 +132,15 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        816,
-        320
+        1216,
+        208
       ],
-      "id": "ae1610ff-da83-4ad7-b388-66bb38d195b8",
+      "id": "638c8c29-4c92-41c3-9980-2853ee023d73",
       "name": "Download File",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -149,10 +149,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -464,
-        0
+        -64,
+        -112
       ],
-      "id": "6c3734b8-767b-458a-b628-e7fc4e7d6f53",
+      "id": "1b374cca-0e66-4124-bbf7-01e80a91e678",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -160,23 +160,19 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
+          "value": "MsPY6emQzrsqpTfD",
           "mode": "list",
           "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
-        },
-        "filters": {
-          "conditions": []
-        },
-        "returnAll": true
+          "cachedResultUrl": "/projects/ILTEhfNZ9jgFvbW7/datatables/MsPY6emQzrsqpTfD"
+        }
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        -240,
-        0
+        160,
+        -112
       ],
-      "id": "71abfa5f-3762-4acf-9b74-058ada241647",
+      "id": "67523f8a-bf86-4911-9dd8-296f348d9915",
       "name": "Get row(s)"
     },
     {
@@ -186,10 +182,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -16,
-        0
+        384,
+        -112
       ],
-      "id": "358d5083-b56f-4c42-a37d-030edf1e4ae1",
+      "id": "39378535-4cb2-4964-8723-7b546095e0ed",
       "name": "Loop Over Items"
     },
     {
@@ -197,14 +193,14 @@
         "assignments": {
           "assignments": [
             {
-              "id": "bea65fd4-2290-47d1-b2b7-9b15afdc3b87",
+              "id": "f4d3f1ea-881c-427f-afbd-30c6b0723575",
               "name": "chatInput",
               "value": "={{ $json.question }}",
               "type": "string"
             },
             {
-              "id": "167f5b14-b87e-40c4-b343-455e1e8858b3",
-              "name": "=sessionId",
+              "id": "aa12f2ea-1285-42a2-a3d1-ee7cb81593b7",
+              "name": "sessionId",
               "value": "={{$now.toMillis()}}",
               "type": "string"
             }
@@ -216,60 +212,20 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        0
+        608,
+        -112
       ],
-      "id": "0e353733-bf9a-4984-b3ad-dfd10bb3b9dc",
+      "id": "67ff16d2-ab3a-403e-a275-100fca8fface",
       "name": "Evaluation"
-    },
-    {
-      "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 3
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $('Evaluation').item.json.id }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "number",
-                      "operation": "exists",
-                      "singleValue": true
-                    },
-                    "id": "67eb8ebb-d097-4850-ac27-800c354768b6"
-                  }
-                ],
-                "combinator": "and"
-              }
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.4,
-      "position": [
-        912,
-        96
-      ],
-      "id": "6c1f48d9-9851-4829-a611-d8d046acd52f",
-      "name": "Switch"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "c1f3d2d7-8e44-4591-8cf1-0a8a30865fa8",
+              "id": "e311d213-59ef-405d-ab57-4d8c2cd2d03d",
               "name": "source_count",
-              "value": "={{\n  /Sources:\\s*\\r?\\n/.test($json.output)\n    ? $json.output\n        .split(/Sources:\\s*\\r?\\n/)[1]\n        .split(/\\r?\\n/)\n        .filter(line => line.trim() !== '')\n        .length\n    : 0\n}}",
+              "value": "={{   /Sources:\\s*\\r?\\n/.test($json.output)     ? $json.output         .split(/Sources:\\s*\\r?\\n/)[1]         .split(/\\r?\\n/)         .filter(line => line.trim() !== '')         .length     : 0 }}",
               "type": "string"
             }
           ]
@@ -279,11 +235,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1120,
-        96
+        1520,
+        -16
       ],
-      "id": "fbe3a99e-89dd-41ce-bcd5-125549878476",
-      "name": "Number of sources"
+      "id": "a9933a65-c0c0-469c-aca3-42dc563d795f",
+      "name": "Number of Sources"
     },
     {
       "parameters": {
@@ -298,10 +254,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        1328,
-        96
+        1728,
+        -16
       ],
-      "id": "ee3b5572-fa64-435c-814f-f5f584f76f5f",
+      "id": "c78c54d2-2ae9-45e4-9ead-0dd2d203f1f6",
       "name": "eval_source_count"
     },
     {
@@ -309,10 +265,10 @@
         "operation": "update",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
+          "value": "MsPY6emQzrsqpTfD",
           "mode": "list",
           "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
+          "cachedResultUrl": "/projects/ILTEhfNZ9jgFvbW7/datatables/MsPY6emQzrsqpTfD"
         },
         "filters": {
           "conditions": [
@@ -385,34 +341,53 @@
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        1632,
-        96
+        2096,
+        -16
       ],
-      "id": "7b469f3e-7edf-4c67-8754-a2b72e463359",
+      "id": "e2284f60-e7c2-4130-a090-6d8a95bb0436",
       "name": "Update row(s)"
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
+        "rules": {
+          "values": [
             {
-              "id": "c1f3d2d7-8e44-4591-8cf1-0a8a30865fa8",
-              "name": "source_names",
-              "value": "={{\n  (() => {\n    const match = $json.output.match(/Sources:\\s*\\r?\\n([\\s\\S]*)$/);\n\n    if (!match) return [\"\"];\n\n    const sources = match[1]\n      .split(/\\r?\\n/)\n      .map(source => source.trim())\n      .filter(Boolean)\n\n      // Remove source reference prefixes like \"- ^1\", \"^2\", or \"- ^-1\"\n      .map(source => source.replace(/^[-*]?\\s*\\^-?\\d+\\s*/, '').trim())\n\n      // Replace Markdown links with only the visible link text\n      .map(source => source.replace(/\\[([^\\]]+)\\]\\([^)]+\\)/g, '$1').trim())\n\n      // Remove trailing page info like \", page N/A\"\n      .map(source => source.replace(/,\\s*page\\s+N\\/A$/i, '').trim())\n\n      // Remove anything that became empty after cleanup\n      .filter(Boolean)\n\n      // Sort alphabetically, case-insensitive\n      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));\n\n    return sources.length ? sources : [\"\"];\n  })()\n}}",
-              "type": "string"
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Evaluation').isExecuted}}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "0ae3bb2c-effb-4b56-8946-bdf645d025ab"
+                  }
+                ],
+                "combinator": "and"
+              }
             }
           ]
         },
-        "options": {}
+        "options": {
+          "fallbackOutput": "none"
+        }
       },
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        1136,
-        288
+        1296,
+        -16
       ],
-      "id": "e7f2995a-25b8-46ac-87f5-171d407c69f1",
-      "name": "Source Names"
+      "id": "22415ba2-66aa-46f2-bc44-ec7e69338f20",
+      "name": "Switch"
     },
     {
       "parameters": {
@@ -427,11 +402,34 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        1328,
-        288
+        1744,
+        192
       ],
-      "id": "3d1a2cd9-33a5-4da6-a7e7-eee4d5f032f3",
-      "name": "eval_source_match"
+      "id": "9c538ab3-d589-404e-8976-e5967e24dff8",
+      "name": "String Similarity"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e311d213-59ef-405d-ab57-4d8c2cd2d03d",
+              "name": "source_names",
+              "value": "={{\n  (() => {\n    const match = $json.output.match(/Sources:\\s*\\r?\\n([\\s\\S]*)$/);\n\n    if (!match) return [\"\"];\n\n    const sources = match[1]\n      .split(/\\r?\\n/)\n      .map(source => source.trim())\n      .filter(Boolean)\n\n      // Remove source reference prefixes like \"- ^1\", \"^2\", or \"- ^-1\"\n      .map(source => source.replace(/^[-*]?\\s*\\^-?\\d+\\s*/, '').trim())\n\n      // Replace Markdown links with only the visible link text\n      .map(source => source.replace(/\\[([^\\]]+)\\]\\([^)]+\\)/g, '$1').trim())\n\n      // Remove trailing page info like \", page N/A\"\n      .map(source => source.replace(/,\\s*page\\s+N\\/A$/i, '').trim())\n\n      // Remove anything that became empty after cleanup\n      .filter(Boolean)\n\n      // Sort alphabetically, case-insensitive\n      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));\n\n    return sources.length ? sources : [\"\"];\n  })()\n}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1536,
+        192
+      ],
+      "id": "d36a1145-2ccc-433f-a81d-c79b613a596d",
+      "name": "Source names"
     }
   ],
   "pinData": {},
@@ -441,17 +439,6 @@
         [
           {
             "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -502,6 +489,17 @@
         ]
       ]
     },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "When clicking ‘Execute workflow’": {
       "main": [
         [
@@ -547,23 +545,7 @@
         ]
       ]
     },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Number of sources",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Source Names",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Number of sources": {
+    "Number of Sources": {
       "main": [
         [
           {
@@ -596,22 +578,38 @@
         ]
       ]
     },
-    "Source Names": {
+    "Switch": {
       "main": [
         [
           {
-            "node": "eval_source_match",
+            "node": "Number of Sources",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Source names",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "eval_source_match": {
+    "String Similarity": {
       "main": [
         [
           {
             "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source names": {
+      "main": [
+        [
+          {
+            "node": "String Similarity",
             "type": "main",
             "index": 0
           }
@@ -625,11 +623,12 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "6b69275a-9a3f-48de-a4c3-8dcc44298517",
+  "versionId": "a99c99f5-23ae-4bac-80d9-a28339441144",
   "meta": {
-    "instanceId": "94e1edcc34a91a151fc2ec1b99597068a304e37fdb946fc806f00f97776fce3a"
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d4a4b34dba3ee3b7962c8920f1d1ae2e83302284e2d9036f405c172286e6d2fe"
   },
   "nodeGroups": [],
-  "id": "iuLOEajlFKB0CQ7q",
+  "id": "XGwdbPVQHwZeDbz5",
   "tags": []
 }
