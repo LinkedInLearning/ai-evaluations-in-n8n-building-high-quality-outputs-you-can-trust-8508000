@@ -1,5 +1,5 @@
 {
-  "name": "04_02 Simple Judge",
+  "name": "03_03 Scoring Judge",
   "nodes": [
     {
       "parameters": {
@@ -8,12 +8,12 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.4,
       "position": [
-        208,
-        192
+        608,
+        -48
       ],
-      "id": "7067413b-eafc-4f26-b3af-36f53195baa3",
+      "id": "b5e2b804-893a-4b68-9f8f-b4cc288dd91f",
       "name": "When chat message received",
-      "webhookId": "7bc81f3b-cc18-42ee-aaca-2920e135bea8"
+      "webhookId": "5b3a05e2-c4dc-4c2a-8cc4-975a76deb2c3"
     },
     {
       "parameters": {
@@ -28,10 +28,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        560,
-        96
+        960,
+        -144
       ],
-      "id": "c4912c1e-424e-4714-ba02-b5f98ba55530",
+      "id": "1d63bc2a-5954-42af-835b-f102a0619279",
       "name": "AI Agent",
       "alwaysOutputData": true
     },
@@ -51,15 +51,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        400,
-        320
+        832,
+        80
       ],
-      "id": "bc7c5a50-0a94-4348-87f1-b25a3df8b360",
+      "id": "6857a3c1-804b-4393-bf71-148f27f181bf",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "vIt4XIujtaBmV5aq",
-          "name": "OpenAi account"
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
         }
       }
     },
@@ -87,16 +87,16 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        688,
-        320
+        1088,
+        80
       ],
-      "id": "0d51c74e-bf8a-4948-9cad-5493e76e06f6",
+      "id": "1dd605da-266b-42e5-83a3-da18198e0939",
       "name": "List files",
-      "webhookId": "7af61dba-4bca-4c97-a5d5-8bf69562fadb",
+      "webhookId": "bb5144d9-fc27-4314-9bbe-a26476fd0783",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "BDKhLeCuiTCLgdPy",
+          "name": "GitHub OAuth2 API"
         }
       }
     },
@@ -105,10 +105,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.4,
       "position": [
-        560,
-        320
+        960,
+        80
       ],
-      "id": "557aaa84-f37a-4c99-9220-5317fd41ea6d",
+      "id": "fe7774b4-f672-4b19-9089-d7280e389812",
       "name": "Simple Memory",
       "alwaysOutputData": false
     },
@@ -132,15 +132,15 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        816,
-        320
+        1216,
+        80
       ],
-      "id": "059bbfa7-f69b-41a6-afe6-1ecd4a2a0636",
+      "id": "638c8c29-4c92-41c3-9980-2853ee023d73",
       "name": "Download File",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -149,10 +149,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -464,
-        0
+        -64,
+        -336
       ],
-      "id": "7ebf1a54-28f2-4644-aba8-e6dd9d6bc2ad",
+      "id": "1b374cca-0e66-4124-bbf7-01e80a91e678",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -160,23 +160,20 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
+          "value": "MsPY6emQzrsqpTfD",
           "mode": "list",
           "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
-        },
-        "filters": {
-          "conditions": []
+          "cachedResultUrl": "/projects/ILTEhfNZ9jgFvbW7/datatables/MsPY6emQzrsqpTfD"
         },
         "returnAll": true
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        -240,
-        0
+        160,
+        -336
       ],
-      "id": "b1afcfba-5ddc-4498-b009-ea7643223a1b",
+      "id": "67523f8a-bf86-4911-9dd8-296f348d9915",
       "name": "Get row(s)"
     },
     {
@@ -186,10 +183,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -16,
-        0
+        384,
+        -240
       ],
-      "id": "6b64c2c2-f20b-41bb-ad64-4b0b019ac180",
+      "id": "39378535-4cb2-4964-8723-7b546095e0ed",
       "name": "Loop Over Items"
     },
     {
@@ -197,14 +194,14 @@
         "assignments": {
           "assignments": [
             {
-              "id": "bea65fd4-2290-47d1-b2b7-9b15afdc3b87",
+              "id": "f4d3f1ea-881c-427f-afbd-30c6b0723575",
               "name": "chatInput",
               "value": "={{ $json.question }}",
               "type": "string"
             },
             {
-              "id": "167f5b14-b87e-40c4-b343-455e1e8858b3",
-              "name": "=sessionId",
+              "id": "aa12f2ea-1285-42a2-a3d1-ee7cb81593b7",
+              "name": "sessionId",
               "value": "={{$now.toMillis()}}",
               "type": "string"
             }
@@ -216,84 +213,20 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        0
+        608,
+        -240
       ],
-      "id": "de7b57e0-3e75-4ae2-8284-2f9273a8965f",
+      "id": "67ff16d2-ab3a-403e-a275-100fca8fface",
       "name": "Evaluation"
-    },
-    {
-      "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 3
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $('Evaluation') }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "object",
-                      "operation": "notEmpty",
-                      "singleValue": true
-                    },
-                    "id": "67eb8ebb-d097-4850-ac27-800c354768b6"
-                  }
-                ],
-                "combinator": "and"
-              }
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 3
-                },
-                "conditions": [
-                  {
-                    "id": "9a75a10b-d7ae-4e75-9653-3389cca6272f",
-                    "leftValue": "={{ $('Evaluation') }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "object",
-                      "operation": "empty",
-                      "singleValue": true
-                    }
-                  }
-                ],
-                "combinator": "and"
-              }
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.4,
-      "position": [
-        928,
-        96
-      ],
-      "id": "8e908903-881b-499f-b01f-5d2493062453",
-      "name": "Switch",
-      "alwaysOutputData": false
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "c1f3d2d7-8e44-4591-8cf1-0a8a30865fa8",
+              "id": "e311d213-59ef-405d-ab57-4d8c2cd2d03d",
               "name": "source_count",
-              "value": "={{\n  /Sources:\\s*\\r?\\n/.test($json.output)\n    ? $json.output\n        .split(/Sources:\\s*\\r?\\n/)[1]\n        .split(/\\r?\\n/)\n        .filter(line => line.trim() !== '')\n        .length\n    : 0\n}}",
+              "value": "={{   /Sources:\\s*\\r?\\n/.test($json.output)     ? $json.output         .split(/Sources:\\s*\\r?\\n/)[1]         .split(/\\r?\\n/)         .filter(line => line.trim() !== '')         .length     : 0 }}",
               "type": "string"
             }
           ]
@@ -303,11 +236,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1472,
-        96
+        1664,
+        -336
       ],
-      "id": "29a44ad1-5ff7-455a-887c-fc1f220aba56",
-      "name": "Number of sources"
+      "id": "a9933a65-c0c0-469c-aca3-42dc563d795f",
+      "name": "Number of Sources"
     },
     {
       "parameters": {
@@ -322,10 +255,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        1680,
-        96
+        1888,
+        -336
       ],
-      "id": "a0f5694d-2b1e-4e32-9345-ce51a7e80fd1",
+      "id": "c78c54d2-2ae9-45e4-9ead-0dd2d203f1f6",
       "name": "eval_source_count"
     },
     {
@@ -333,10 +266,10 @@
         "operation": "update",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
+          "value": "MsPY6emQzrsqpTfD",
           "mode": "list",
           "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
+          "cachedResultUrl": "/projects/ILTEhfNZ9jgFvbW7/datatables/MsPY6emQzrsqpTfD"
         },
         "filters": {
           "conditions": [
@@ -409,18 +342,83 @@
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        1984,
-        96
+        2816,
+        256
       ],
-      "id": "33fb7028-755c-4b8b-859b-788191f12744",
+      "id": "e2284f60-e7c2-4130-a090-6d8a95bb0436",
       "name": "Update row(s)"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Evaluation').isExecuted}}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "id": "0ae3bb2c-effb-4b56-8946-bdf645d025ab"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "00862722-d8b9-4451-94c2-814df25ad998",
+                    "leftValue": "={{ $('Evaluation').isExecuted}}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "false",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1424,
+        -144
+      ],
+      "id": "22415ba2-66aa-46f2-bc44-ec7e69338f20",
+      "name": "Switch"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "c1f3d2d7-8e44-4591-8cf1-0a8a30865fa8",
+              "id": "e311d213-59ef-405d-ab57-4d8c2cd2d03d",
               "name": "source_names",
               "value": "={{\n  (() => {\n    const match = $json.output.match(/Sources:\\s*\\r?\\n([\\s\\S]*)$/);\n\n    if (!match) return [\"\"];\n\n    const sources = match[1]\n      .split(/\\r?\\n/)\n      .map(source => source.trim())\n      .filter(Boolean)\n\n      // Remove source reference prefixes like \"- ^1\", \"^2\", or \"- ^-1\"\n      .map(source => source.replace(/^[-*]?\\s*\\^-?\\d+\\s*/, '').trim())\n\n      // Replace Markdown links with only the visible link text\n      .map(source => source.replace(/\\[([^\\]]+)\\]\\([^)]+\\)/g, '$1').trim())\n\n      // Remove trailing page info like \", page N/A\"\n      .map(source => source.replace(/,\\s*page\\s+N\\/A$/i, '').trim())\n\n      // Remove anything that became empty after cleanup\n      .filter(Boolean)\n\n      // Sort alphabetically, case-insensitive\n      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));\n\n    return sources.length ? sources : [\"\"];\n  })()\n}}",
               "type": "string"
@@ -432,11 +430,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1488,
-        288
+        1664,
+        -144
       ],
-      "id": "a7904e91-d2d4-49d7-b4e5-2c0c684177c0",
-      "name": "Source Names"
+      "id": "d36a1145-2ccc-433f-a81d-c79b613a596d",
+      "name": "Source names"
     },
     {
       "parameters": {
@@ -451,10 +449,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        1680,
-        288
+        1888,
+        -144
       ],
-      "id": "57abbcb4-ea10-4788-be5e-97b17b9a52be",
+      "id": "9c538ab3-d589-404e-8976-e5967e24dff8",
       "name": "eval_source_match"
     },
     {
@@ -462,7 +460,7 @@
         "assignments": {
           "assignments": [
             {
-              "id": "2de6222f-74e3-4056-85c7-3148cd2679fa",
+              "id": "9ab1c23c-ed2d-4d83-93a6-0dc342cada03",
               "name": "output",
               "value": "={{ $('AI Agent').item.json.output }}",
               "type": "string"
@@ -474,25 +472,245 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1152,
-        288
+        1648,
+        -512
       ],
-      "id": "0b5b0591-8fce-4103-92fc-5046f2ea7206",
-      "name": "ChatOutput"
+      "id": "67cb403d-8ab6-4e62-8471-d0222a304131",
+      "name": "Chat Output"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {
+          "reasoningEffort": "low"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1712,
+        224
+      ],
+      "id": "58677bbe-0900-4876-a38f-78e5d8489b0c",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
+        }
+      }
     },
     {
       "parameters": {
         "operation": "setMetrics",
-        "options": {}
+        "expectedAnswer": "={{ $('Evaluation').item.json.expected_answer }}",
+        "actualAnswer": "={{ $json.output }}",
+        "options": {
+          "metricName": "scoring_judge"
+        }
       },
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        1456,
-        -160
+        1664,
+        64
       ],
-      "id": "26d59732-e853-4d6f-9258-bbf858afd4c4",
+      "id": "a453b750-01fb-42d8-831f-7f1dc02a4b26",
+      "name": "Scoring Judge"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "List files in the knowledge hub",
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "tobiaszwingmann",
+          "mode": "list",
+          "cachedResultName": "tobiaszwingmann",
+          "cachedResultUrl": "https://github.com/tobiaszwingmann"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "ai-evaluations-in-n8n-building-high-quality-outputs-you-can-trust-8508000"
+        },
+        "filePath": "=/documents/"
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        1712,
+        608
+      ],
+      "id": "5df499cc-98df-49d3-8c4b-1378fd684552",
+      "name": "List files1",
+      "webhookId": "bb5144d9-fc27-4314-9bbe-a26476fd0783",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "BDKhLeCuiTCLgdPy",
+          "name": "GitHub OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Request knowledge hub file",
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Application",
+              "value": "application/vnd.github.raw+json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        1840,
+        608
+      ],
+      "id": "e376d986-1a2c-47c6-9a6b-4940f95318c4",
+      "name": "Download File1",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {
+          "textFormat": {
+            "textOptions": {
+              "type": "json_schema",
+              "name": "faithfulness_judge",
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"check\": {\n      \"type\": \"integer\",\n      \"enum\": [1, 0],\n      \"description\": \"1 = faithful, 0 = not faithful\"\n    },\n    \"reason\": {\n      \"type\": \"string\",\n      \"description\": \"Brief explanation of the judgment.\"\n    }\n  },\n  \"required\": [\"check\", \"reason\"],\n  \"additionalProperties\": false\n}"
+            }
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1584,
+        608
+      ],
+      "id": "c91a8289-b4c3-424e-bc5f-13d29923cba1",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=AI Response to be evaluated:\n\"\"\"\n{{ $json.output }}\n\"\"\"",
+        "options": {
+          "systemMessage": "You are an impartial faithfulness evaluator.\n\nDetermine whether the AI response is fully supported by the provided source. Use the GitHub list-files and download-file tools when needed to verify claims.\n\nMark **yes** (1) only when:\n\n* Every factual claim is supported by the source.\n* No required source information is materially omitted.\n* No unsupported or contradictory content is added.\n\nMark **no** (0) if any claim is incorrect, unsupported, contradictory, materially incomplete, or misleading.\n\nOutput only:\n\n{\"check\":\"1|0\",\"reason\":\"brief explanation\"}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1680,
+        368
+      ],
+      "id": "26bc0ae2-f133-4129-9867-d013cac73a2e",
+      "name": "Faithfulness Judge"
+    },
+    {
+      "parameters": {
+        "operation": "setMetrics",
+        "metric": "customMetrics",
+        "metrics": {
+          "assignments": [
+            {
+              "name": "faithfulness_judge",
+              "value": "={{ $json.output.parseJson().check}}",
+              "type": "number",
+              "id": "b99667c6-53ee-4da9-905e-57581b72464b"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.evaluation",
+      "typeVersion": 4.8,
+      "position": [
+        2144,
+        256
+      ],
+      "id": "7d421198-624d-44f9-bc64-c6803b7d3b66",
       "name": "Evaluation1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "86cfb217-f7c8-4d37-8807-1f34a467d942",
+              "name": "faithfulness_judge_reason",
+              "value": "={{ $json.output.parseJson().reason }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2144,
+        480
+      ],
+      "id": "ed565839-4dee-4327-8756-7bf844d12f09",
+      "name": "faithfulness_judge_reason"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dc1d473e-997f-4042-b8e3-81bfa95c4328",
+              "name": "agent_output",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1696,
+        784
+      ],
+      "id": "6f10081e-ebe1-49d8-a160-bd15ec1cf525",
+      "name": "agent_output"
     }
   ],
   "pinData": {},
@@ -502,17 +720,6 @@
         [
           {
             "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -563,6 +770,17 @@
         ]
       ]
     },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "When clicking ‘Execute workflow’": {
       "main": [
         [
@@ -608,30 +826,7 @@
         ]
       ]
     },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Number of sources",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Source Names",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "ChatOutput",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Number of sources": {
+    "Number of Sources": {
       "main": [
         [
           {
@@ -644,7 +839,13 @@
     },
     "eval_source_count": {
       "main": [
-        []
+        [
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Update row(s)": {
@@ -658,7 +859,45 @@
         ]
       ]
     },
-    "Source Names": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Number of Sources",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Source names",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Scoring Judge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Faithfulness Judge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "agent_output",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Chat Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source names": {
       "main": [
         [
           {
@@ -671,7 +910,117 @@
     },
     "eval_source_match": {
       "main": [
-        []
+        [
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Scoring Judge",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scoring Judge": {
+      "main": [
+        [
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List files1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Faithfulness Judge",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Faithfulness Judge",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Faithfulness Judge",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Faithfulness Judge": {
+      "main": [
+        [
+          {
+            "node": "Evaluation1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "faithfulness_judge_reason",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluation1": {
+      "main": [
+        [
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "faithfulness_judge_reason": {
+      "main": [
+        [
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agent_output": {
+      "main": [
+        [
+          {
+            "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -681,11 +1030,12 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "1fbe1485-1bfa-49d7-af5f-637036b20059",
+  "versionId": "280ec765-8690-4908-8402-1935a4593a7b",
   "meta": {
-    "instanceId": "94e1edcc34a91a151fc2ec1b99597068a304e37fdb946fc806f00f97776fce3a"
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d4a4b34dba3ee3b7962c8920f1d1ae2e83302284e2d9036f405c172286e6d2fe"
   },
   "nodeGroups": [],
-  "id": "ererWKl2Ps1XiWGc",
+  "id": "XGwdbPVQHwZeDbz5",
   "tags": []
 }
