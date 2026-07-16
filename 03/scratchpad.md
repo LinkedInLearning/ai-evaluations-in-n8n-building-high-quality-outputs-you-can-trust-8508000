@@ -2,6 +2,15 @@
 
 ## 3.2 Scoring Judge
 
+**Switch Node**
+```
+{{ $('Evaluation').isExecuted}}
+```
+
+**Set Metric**
+
+- Correctness (AI-based)
+
 ```
 You are an expert factual evaluator assessing the accuracy of answers compared to established ground truths.
 
