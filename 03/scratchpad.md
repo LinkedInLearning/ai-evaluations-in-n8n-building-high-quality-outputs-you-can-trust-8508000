@@ -7,6 +7,16 @@
 {{ $('Evaluation').isExecuted}}
 ```
 
+---
+
+**Edit Fields**
+
+- Name: `Chat Output`
+- `output` String
+- `{{ $('AI Agent').item.json.output }}`
+
+---
+
 **Set Metric**
 
 - Correctness (AI-based)
