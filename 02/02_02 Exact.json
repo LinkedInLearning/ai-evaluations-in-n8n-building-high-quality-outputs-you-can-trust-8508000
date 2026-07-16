@@ -543,11 +543,6 @@
             "node": "Number of Sources",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Update row(s)",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -559,7 +554,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "ff20f1a5-2d51-4812-bebe-f1df1ad92246",
+  "versionId": "3abd4e5c-095c-4485-a888-5f6ecb45d1da",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "d4a4b34dba3ee3b7962c8920f1d1ae2e83302284e2d9036f405c172286e6d2fe"
