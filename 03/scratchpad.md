@@ -93,3 +93,63 @@ Expected Output:
 - Consider the significance of each difference in the context of the overall information.
 - Be consistent in your scoring approach across different evaluations.
 ```
+
+---
+
+## 3.3 Faithfulness Judge
+
+**AI Agent Node**
+
+Name: `Faithfulness Judge`
+
+System Prompt:
+```
+You are an impartial faithfulness evaluator.
+
+Determine whether the AI response is fully supported by the provided source. Use the GitHub list-files and download-file tools when needed to verify claims.
+
+Mark **yes** (1) only when:
+
+* Every factual claim is supported by the source.
+* No required source information is materially omitted.
+* No unsupported or contradictory content is added.
+
+Mark **no** (0) if any claim is incorrect, unsupported, contradictory, materially incomplete, or misleading.
+
+Output only:
+
+{"check":"1|0","reason":"brief explanation"}
+```
+
+**Model** 
+
+- Option: `Response Format`
+  - Type: `JSON Schema`
+  - Verbosity: `Medium`
+  - Name: `faithfulness_judge`
+  - Schema:
+```
+{
+  "type": "object",
+  "properties": {
+    "check": {
+      "type": "string",
+      "enum": ["yes", "no"]
+    },
+    "reason": {
+      "type": "string",
+      "description": "Brief explanation of the faithfulness judgment."
+    }
+  },
+  "required": ["check", "reason"],
+  "additionalProperties": false
+}
+```
+
+**Prompt**
+
+```
+AI Response to be evaluated:
+```
+{{ $json.output }}
+```
