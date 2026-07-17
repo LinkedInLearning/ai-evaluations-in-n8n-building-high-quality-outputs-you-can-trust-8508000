@@ -6,6 +6,7 @@
 **Edit Fields**
 - Name: `execution_id`
 - Value: `{{$execution.id}}`
+- Include All Other Fields: `True`
 
 **Save to File**
 Options:
