@@ -1,5 +1,5 @@
 {
-  "name": "04_02 Export",
+  "name": "04_02 Clean",
   "nodes": [
     {
       "parameters": {
@@ -8,10 +8,10 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.4,
       "position": [
-        -1312,
-        -272
+        -1600,
+        16
       ],
-      "id": "1f8fe09c-74d3-4325-a083-187681d351fe",
+      "id": "b83c6caf-0a78-4680-8425-bdfbd49c2ec9",
       "name": "When chat message received",
       "webhookId": "dd0e3f63-5017-4a31-8e16-66ac6dbf2337"
     },
@@ -28,10 +28,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -416,
-        48
+        -704,
+        336
       ],
-      "id": "bb26ef76-aabc-43be-b416-77e5c23a2468",
+      "id": "61c0f9fc-308d-4936-b0d0-a91556b0fdea",
       "name": "AI Agent",
       "alwaysOutputData": true
     },
@@ -51,15 +51,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        -544,
-        272
+        -832,
+        560
       ],
-      "id": "5b797d7b-3e9a-4cc4-b82d-9a26bea1533a",
+      "id": "324686cc-0a01-4f7c-8bf0-d19334ab8307",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
-          "id": "vIt4XIujtaBmV5aq",
-          "name": "OpenAi account"
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
         }
       }
     },
@@ -87,16 +87,16 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        -288,
-        272
+        -576,
+        560
       ],
-      "id": "2536fe77-8772-4b61-ac73-cdc5f94eb7f4",
+      "id": "b5a7ac99-7fdd-4872-b99d-617007f4fba8",
       "name": "List files",
       "webhookId": "2827e0f0-5858-43c2-971f-1944f5c2b27a",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -105,10 +105,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.4,
       "position": [
-        -416,
-        272
+        -704,
+        560
       ],
-      "id": "894f2790-05d8-4c89-82ef-caa1ed691af4",
+      "id": "8e74c752-2759-4a6f-b843-d3d65d52838c",
       "name": "Simple Memory",
       "alwaysOutputData": false
     },
@@ -132,15 +132,15 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        -160,
-        272
+        -448,
+        560
       ],
-      "id": "4d792856-8478-4665-85c2-6bb847cebf6d",
+      "id": "c184a9c6-d38a-4f54-95e8-c63dfba41c9f",
       "name": "Download File",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -149,10 +149,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1872,
-        192
+        -2160,
+        480
       ],
-      "id": "9deef3f1-c08d-409f-b926-d76407dc4a9a",
+      "id": "87a7c7be-f5f8-4956-9468-0ec4cf53de64",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -160,20 +160,18 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
-          "mode": "list",
-          "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
+          "value": "evals",
+          "mode": "name"
         },
         "limit": 2
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        -1696,
-        192
+        -1984,
+        480
       ],
-      "id": "e9f460c4-6c4a-430f-9de2-8321ae11338b",
+      "id": "f54f591c-a1e6-4c2c-aa4e-6ad5f718caba",
       "name": "Get row(s)"
     },
     {
@@ -183,10 +181,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -1472,
-        192
+        -1760,
+        480
       ],
-      "id": "8097c851-bf50-4eb6-979b-99de05aa2773",
+      "id": "7975aa76-512c-4869-b2a6-a3c27a094609",
       "name": "Loop Over Items"
     },
     {
@@ -213,10 +211,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1072,
-        208
+        -1360,
+        496
       ],
-      "id": "186f37a8-b3f0-4bae-9530-a8123eb49108",
+      "id": "1473c98a-0afc-4ce7-a455-b356166c8fbd",
       "name": "Evaluation"
     },
     {
@@ -236,10 +234,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        192,
-        400
+        -96,
+        688
       ],
-      "id": "4cbe025e-cbe9-478b-b748-f1b1fe66fef2",
+      "id": "405fdd96-0f96-4e2f-b55e-973c85463918",
       "name": "Number of Sources"
     },
     {
@@ -255,10 +253,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        544,
-        400
+        256,
+        688
       ],
-      "id": "550d1281-a538-4eea-8666-eac84b640971",
+      "id": "b8edec64-d8dc-4e89-8b95-25cb0ee54e56",
       "name": "eval_source_count"
     },
     {
@@ -266,10 +264,8 @@
         "operation": "update",
         "dataTableId": {
           "__rl": true,
-          "value": "EoOa3X2b0iTV2pUq",
-          "mode": "list",
-          "cachedResultName": "evals",
-          "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
+          "value": "evals",
+          "mode": "name"
         },
         "filters": {
           "conditions": [
@@ -392,10 +388,10 @@
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        1168,
-        1088
+        880,
+        1376
       ],
-      "id": "6e28294f-c539-49a1-8dcf-5d39cc5ee9b7",
+      "id": "825e0b05-c608-4dcd-a07a-d34e48ea17a0",
       "name": "Update row(s)",
       "alwaysOutputData": false,
       "executeOnce": false
@@ -459,10 +455,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        -80,
-        48
+        -368,
+        336
       ],
-      "id": "9e28df5d-b427-4558-8c6d-6cfc15745bfd",
+      "id": "57d256ae-c7bb-4d5d-93a5-ba1339741ac8",
       "name": "Switch"
     },
     {
@@ -482,10 +478,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        192,
-        560
+        -96,
+        848
       ],
-      "id": "5c2c32e4-721a-492e-ad27-eda5020ddb23",
+      "id": "e171381a-c116-4bdf-8615-416ae729b96b",
       "name": "Source names"
     },
     {
@@ -501,10 +497,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        544,
-        560
+        256,
+        848
       ],
-      "id": "c135c686-9ecd-425a-9941-23f191760ba9",
+      "id": "af6a00ed-a85a-479e-9287-f90b44e7806c",
       "name": "eval_source_match"
     },
     {
@@ -524,10 +520,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        288,
-        -288
+        0,
+        0
       ],
-      "id": "220526df-dc6b-4b01-bbdd-94359e439533",
+      "id": "62af7f99-eb19-45d9-a698-ea22aabe391b",
       "name": "Chat Output"
     },
     {
@@ -546,15 +542,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        64,
-        752
+        -224,
+        1040
       ],
-      "id": "ad012905-e5fd-49b5-8b63-c89b8ff959f1",
+      "id": "921b1b79-dc70-4300-a26f-458da4154014",
       "name": "OpenAI Chat Model1",
       "credentials": {
         "openAiApi": {
-          "id": "vIt4XIujtaBmV5aq",
-          "name": "OpenAi account"
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
         }
       }
     },
@@ -570,10 +566,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        192,
-        736
+        -96,
+        1024
       ],
-      "id": "360db5a5-ff5a-413a-ba79-e26300943065",
+      "id": "78234695-07a7-44f0-9065-bfd4a94ff85b",
       "name": "Scoring Judge"
     },
     {
@@ -600,16 +596,16 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        256,
-        1088
+        -32,
+        1376
       ],
-      "id": "150c7ee6-9b4f-48b4-85f4-2919efea655f",
+      "id": "6b231341-438c-4a8a-b787-8aa8f37f2b96",
       "name": "List files1",
       "webhookId": "d6d76967-f147-4130-b814-ba6773f73c32",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -633,15 +629,15 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        368,
-        1088
+        80,
+        1376
       ],
-      "id": "a9e88d21-44a4-40a3-ad3f-b98960a43b47",
+      "id": "58eddddf-7bd4-45e9-bb52-02c820658b82",
       "name": "Download File1",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "uj6ICrWupTmCdWut",
-          "name": "GitHub account 3"
+          "id": "86PBGaCSRGRKOg0Z",
+          "name": "GitHub account"
         }
       }
     },
@@ -667,15 +663,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        128,
-        1088
+        -160,
+        1376
       ],
-      "id": "d84380ab-78f9-4a34-8b63-a849ec312298",
+      "id": "dbd34457-e33f-45de-ae6f-47cde3f8dcba",
       "name": "OpenAI Chat Model2",
       "credentials": {
         "openAiApi": {
-          "id": "vIt4XIujtaBmV5aq",
-          "name": "OpenAi account"
+          "id": "Qisx2uzl8QHJIcCg",
+          "name": "OpenAI account"
         }
       }
     },
@@ -690,10 +686,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        192,
-        864
+        -96,
+        1152
       ],
-      "id": "adccccf3-ba7b-47b9-b676-d2b5642bb999",
+      "id": "1e55fb0b-e12f-4890-8a34-ab313aa09b01",
       "name": "Faithfulness Judge"
     },
     {
@@ -714,10 +710,10 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        560,
-        864
+        272,
+        1152
       ],
-      "id": "0140b99e-ec48-40d1-bf0b-25cdcae5d5c9",
+      "id": "4de08e7b-df26-4d88-8ceb-6cf0fc59b07e",
       "name": "faithfulness_judge"
     },
     {
@@ -737,10 +733,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        560,
-        1072
+        272,
+        1360
       ],
-      "id": "1e94cd77-4f57-4c92-b60f-aae7ec06b491",
+      "id": "f52a5749-0511-471a-b440-26d88719d435",
       "name": "faithfulness_judge_reason"
     },
     {
@@ -760,10 +756,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        544,
-        256
+        256,
+        544
       ],
-      "id": "485b0a21-a9ff-4dae-80d6-3e885c5f6ad0",
+      "id": "5a63dcd5-ccce-46d8-8f25-d04a6b1dab55",
       "name": "agent_output"
     },
     {
@@ -775,11 +771,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2256,
-        176
+        -2432,
+        448
       ],
       "typeVersion": 1,
-      "id": "c8b1ab64-0a8f-4555-9661-1ea29b4372fc",
+      "id": "ba6fe9be-c63a-4d85-899b-a6af58928fd2",
       "name": "Sticky Note"
     },
     {
@@ -792,77 +788,11 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        864,
-        656
+        576,
+        944
       ],
-      "id": "1da9708c-1d2f-42f8-bb83-20324898a320",
+      "id": "75cc7e21-1315-413d-b04a-2c38191b9a53",
       "name": "Merge"
-    },
-    {
-      "parameters": {
-        "operation": "xlsx",
-        "options": {
-          "fileName": "=Eval_Run_{{$execution.id}}.xlsx"
-        }
-      },
-      "type": "n8n-nodes-base.convertToFile",
-      "typeVersion": 1.1,
-      "position": [
-        -896,
-        576
-      ],
-      "id": "a0e9b661-c529-425b-8787-a3e044ec3d91",
-      "name": "Export to Excel"
-    },
-    {
-      "parameters": {
-        "modelName": "models/gemini-3.5-flash",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
-      "typeVersion": 1.1,
-      "position": [
-        -704,
-        272
-      ],
-      "id": "2796afac-8c18-4aa4-b2b7-a7ff4a0738f8",
-      "name": "Google Gemini Chat Model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "3iTEcbdAUoirKGK7",
-          "name": "Gemini Paid"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "fcba653b-531f-4d72-bb73-36fea07b5142",
-              "name": "execution_id",
-              "value": "={{$execution.id}}",
-              "type": "string"
-            },
-            {
-              "id": "73307e05-bd75-4d2e-ae54-2c5696c36eee",
-              "name": "execution_time",
-              "value": "={{ $now.format('yyyy-MM-dd hh:mm') }}",
-              "type": "string"
-            }
-          ]
-        },
-        "includeOtherFields": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -1152,
-        576
-      ],
-      "id": "7a2e5d06-a7f7-4faf-9279-c94d02f82421",
-      "name": "Metadata"
     }
   ],
   "pinData": {},
@@ -876,11 +806,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "OpenAI Chat Model": {
-      "ai_languageModel": [
-        []
       ]
     },
     "List files": {
@@ -951,13 +876,7 @@
     },
     "Loop Over Items": {
       "main": [
-        [
-          {
-            "node": "Metadata",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "Evaluation",
@@ -1186,7 +1105,7 @@
         ]
       ]
     },
-    "Google Gemini Chat Model": {
+    "OpenAI Chat Model": {
       "ai_languageModel": [
         [
           {
@@ -1196,31 +1115,19 @@
           }
         ]
       ]
-    },
-    "Metadata": {
-      "main": [
-        [
-          {
-            "node": "Export to Excel",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
+    "binaryMode": "separate"
   },
-  "versionId": "3062903d-5a95-4d1f-b665-7a15f7a16b46",
+  "versionId": "94ff64d4-0b79-4beb-9859-87df767f083e",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "94e1edcc34a91a151fc2ec1b99597068a304e37fdb946fc806f00f97776fce3a"
+    "instanceId": "d4a4b34dba3ee3b7962c8920f1d1ae2e83302284e2d9036f405c172286e6d2fe"
   },
   "nodeGroups": [],
-  "id": "DLpxh2hssbkw6BYR",
+  "id": "TsyI8Ol6a4Fjk60u",
   "tags": []
 }
