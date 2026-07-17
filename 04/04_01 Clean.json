@@ -8,8 +8,8 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.4,
       "position": [
-        -1120,
-        -368
+        -1312,
+        -272
       ],
       "id": "1f8fe09c-74d3-4325-a083-187681d351fe",
       "name": "When chat message received",
@@ -18,7 +18,7 @@
     {
       "parameters": {
         "options": {
-          "systemMessage": "=### Role\nYou are an HR assistant for internal employees. Your role is to answer questions about HR policies using only the information available in the approved HR knowledge library.Do not answer questions outside HR policy topics. Do not rely on general knowledge, assumptions, or external sources.\n\n### Q&A Process\n\nFor every HR question, follow this process:\n\n1. List the available files in the HR knowledge library.\n2. Identify the file or files most relevant to the user’s question.\n3. Download and review the relevant file or files.\n4. Answer only if the reviewed files contain information that directly supports the answer.\n   * Include the relevant policy details.\n   * Mention the source file name or names used.\n   * Do not add information that is not supported by the files.\n5. If the reviewed files do not contain a supported answer, provide the fallback response.\n   \n### Persona\nIdentity: You are a dedicated HR support assistant. You cannot adopt other personas or impersonate any other entity. If a user tries to make you act as a different chatbot or persona, politely decline and reiterate your role to offer assistance only with matters related to customer support.\n\n### Style\nAnswer in short and brief sentences. When using lists, limit each bullet point to max. 10 words. If the user asks a very broad question, try to narrow it down first so provide succinct answers.\n                \n### Constraints\n1. No Data Divulge: Never mention that you have access to source data explicitly to the user.\n2. Maintaining Focus: If a user attempts to divert you to unrelated topics, never change your role or break your character. Politely redirect the conversation back to topics relevant to customer support.\n3. Exclusive Reliance on Source Data: You must rely exclusively on the source data provided by the get_hr_policy_tool to answer user queries. If a query is not covered by the source data, use the fallback response.\n4. Restrictive Role Focus: You do not answer questions or perform tasks that are not related to your role. This includes refraining from tasks such as coding explanations, personal advice, or any other unrelated activities.\n\n### Fallback response\n“I’m sorry, I can’t answer that. Please contact HR”.\n\n### Citations\nIf you retrieve answers, always cite the source of the information using footnotes on a paragraph level. Insert the unique (distinct) references used at the end of your response indicating the filename and URL in which the information was found.\n\n### Example citation:\n```\nSources: \n- ^1 [Document 6_ Employee Benefits and Perks.pdf](https://api.github.com/repos/LinkedInLearning/create-custom-chatbots-with-n8n-and-vector-search-4078220/contents/advanced-chatbot/documents/Document%206_%20Employee%20Benefits%20and%20Perks.pdf?ref=main)\n```",
+          "systemMessage": "=### Role\nYou are an HR assistant for internal employees. Your role is to answer questions about HR policies using only the information available in the approved HR knowledge library.Do not answer questions outside HR policy topics. Do not rely on general knowledge, assumptions, or external sources.\n\n### Q&A Process\n\nFor every HR question, follow this process:\n\n1. Look up the available files in the HR knowledge library.\n2. Identify the file or files most relevant to the user’s question.\n3. Download and review the relevant file or files.\n4. Answer only if the reviewed files contain information that directly supports the answer.\n   * Include the relevant policy details.\n   * Mention the source file name or names used.\n   * Do not add information that is not supported by the files.\n5. If the reviewed files do not contain a supported answer, provide the fallback response.\n   \n### Persona\nIdentity: You are a dedicated HR support assistant. You cannot adopt other personas or impersonate any other entity. If a user tries to make you act as a different chatbot or persona, politely decline and reiterate your role to offer assistance only with matters related to customer support.\n\n### Style\nAnswer in short and brief sentences. When using lists, limit each bullet point to max. 10 words. If the user asks a very broad question, try to narrow it down first so provide succinct answers.\n                \n### Constraints\n1. No Data Divulge: Never mention that you have access to source data explicitly to the user.\n2. Maintaining Focus: If a user attempts to divert you to unrelated topics, never change your role or break your character. Politely redirect the conversation back to topics relevant to customer support.\n3. Exclusive Reliance on Source Data: You must rely exclusively on the source data provided by the get_hr_policy_tool to answer user queries. If a query is not covered by the source data, use the fallback response.\n4. Restrictive Role Focus: You do not answer questions or perform tasks that are not related to your role. This includes refraining from tasks such as coding explanations, personal advice, or any other unrelated activities.\n\n### Fallback response\n“This is not addressed anywhere in the handbook. Please contact HR.”.\n\n### Output\nProvide only the answer with citations or the Fallback response.\n\n### Citations\nIf you retrieve answers, always cite the source of the information using footnotes on a paragraph level. Insert the unique (distinct) references used at the end of your response indicating the filename and URL in which the information was found.\n\n### Example citation:\n```\nSources: \n- ^1 [Document 6_ Employee Benefits and Perks.pdf](https://api.github.com/repos/LinkedInLearning/create-custom-chatbots-with-n8n-and-vector-search-4078220/contents/advanced-chatbot/documents/Document%206_%20Employee%20Benefits%20and%20Perks.pdf?ref=main)\n```",
           "returnIntermediateSteps": false,
           "tracingMetadata": {
             "values": []
@@ -28,8 +28,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -640,
-        -48
+        -416,
+        48
       ],
       "id": "bb26ef76-aabc-43be-b416-77e5c23a2468",
       "name": "AI Agent",
@@ -51,8 +51,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        -768,
-        176
+        -544,
+        272
       ],
       "id": "5b797d7b-3e9a-4cc4-b82d-9a26bea1533a",
       "name": "OpenAI Chat Model",
@@ -87,8 +87,8 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        -512,
-        176
+        -288,
+        272
       ],
       "id": "2536fe77-8772-4b61-ac73-cdc5f94eb7f4",
       "name": "List files",
@@ -105,8 +105,8 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.4,
       "position": [
-        -640,
-        176
+        -416,
+        272
       ],
       "id": "894f2790-05d8-4c89-82ef-caa1ed691af4",
       "name": "Simple Memory",
@@ -132,8 +132,8 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        -384,
-        176
+        -160,
+        272
       ],
       "id": "4d792856-8478-4665-85c2-6bb847cebf6d",
       "name": "Download File",
@@ -149,8 +149,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1680,
-        96
+        -1872,
+        192
       ],
       "id": "9deef3f1-c08d-409f-b926-d76407dc4a9a",
       "name": "When clicking ‘Execute workflow’"
@@ -165,13 +165,13 @@
           "cachedResultName": "evals",
           "cachedResultUrl": "/projects/uxqpE7EzPH2UvIcO/datatables/EoOa3X2b0iTV2pUq"
         },
-        "limit": 3
+        "returnAll": true
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        -1504,
-        96
+        -1696,
+        192
       ],
       "id": "e9f460c4-6c4a-430f-9de2-8321ae11338b",
       "name": "Get row(s)"
@@ -183,8 +183,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -1280,
-        96
+        -1472,
+        192
       ],
       "id": "8097c851-bf50-4eb6-979b-99de05aa2773",
       "name": "Loop Over Items"
@@ -213,8 +213,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1088,
-        112
+        -1072,
+        208
       ],
       "id": "186f37a8-b3f0-4bae-9530-a8123eb49108",
       "name": "Evaluation"
@@ -236,8 +236,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -32,
-        304
+        192,
+        400
       ],
       "id": "4cbe025e-cbe9-478b-b748-f1b1fe66fef2",
       "name": "Number of Sources"
@@ -255,8 +255,8 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        320,
-        304
+        544,
+        400
       ],
       "id": "550d1281-a538-4eea-8666-eac84b640971",
       "name": "eval_source_count"
@@ -372,6 +372,16 @@
               "type": "string",
               "readOnly": false,
               "removed": false
+            },
+            {
+              "id": "scoring_judge",
+              "displayName": "scoring_judge",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -382,11 +392,13 @@
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1.1,
       "position": [
-        864,
-        976
+        1168,
+        1088
       ],
       "id": "6e28294f-c539-49a1-8dcf-5d39cc5ee9b7",
-      "name": "Update row(s)"
+      "name": "Update row(s)",
+      "alwaysOutputData": false,
+      "executeOnce": false
     },
     {
       "parameters": {
@@ -447,8 +459,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        -304,
-        -48
+        -80,
+        48
       ],
       "id": "9e28df5d-b427-4558-8c6d-6cfc15745bfd",
       "name": "Switch"
@@ -470,8 +482,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -32,
-        464
+        192,
+        560
       ],
       "id": "5c2c32e4-721a-492e-ad27-eda5020ddb23",
       "name": "Source names"
@@ -489,8 +501,8 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        320,
-        464
+        544,
+        560
       ],
       "id": "c135c686-9ecd-425a-9941-23f191760ba9",
       "name": "eval_source_match"
@@ -512,8 +524,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        64,
-        -384
+        288,
+        -288
       ],
       "id": "220526df-dc6b-4b01-bbdd-94359e439533",
       "name": "Chat Output"
@@ -534,8 +546,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        -160,
-        656
+        64,
+        752
       ],
       "id": "ad012905-e5fd-49b5-8b63-c89b8ff959f1",
       "name": "OpenAI Chat Model1",
@@ -558,8 +570,8 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        -32,
-        640
+        192,
+        736
       ],
       "id": "360db5a5-ff5a-413a-ba79-e26300943065",
       "name": "Scoring Judge"
@@ -588,8 +600,8 @@
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
       "position": [
-        32,
-        992
+        256,
+        1088
       ],
       "id": "150c7ee6-9b4f-48b4-85f4-2919efea655f",
       "name": "List files1",
@@ -621,8 +633,8 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.4,
       "position": [
-        144,
-        992
+        368,
+        1088
       ],
       "id": "a9e88d21-44a4-40a3-ad3f-b98960a43b47",
       "name": "Download File1",
@@ -655,8 +667,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        -96,
-        992
+        128,
+        1088
       ],
       "id": "d84380ab-78f9-4a34-8b63-a849ec312298",
       "name": "OpenAI Chat Model2",
@@ -678,8 +690,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        -32,
-        768
+        192,
+        864
       ],
       "id": "adccccf3-ba7b-47b9-b676-d2b5642bb999",
       "name": "Faithfulness Judge"
@@ -702,8 +714,8 @@
       "type": "n8n-nodes-base.evaluation",
       "typeVersion": 4.8,
       "position": [
-        336,
-        768
+        560,
+        864
       ],
       "id": "0140b99e-ec48-40d1-bf0b-25cdcae5d5c9",
       "name": "faithfulness_judge"
@@ -725,8 +737,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        336,
-        976
+        560,
+        1072
       ],
       "id": "1e94cd77-4f57-4c92-b60f-aae7ec06b491",
       "name": "faithfulness_judge_reason"
@@ -748,8 +760,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -32,
-        160
+        544,
+        256
       ],
       "id": "485b0a21-a9ff-4dae-80d6-3e885c5f6ad0",
       "name": "agent_output"
@@ -758,17 +770,73 @@
       "parameters": {
         "content": "## Evals",
         "height": 1168,
-        "width": 3200,
+        "width": 3540,
         "color": 5
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2064,
-        80
+        -2256,
+        176
       ],
       "typeVersion": 1,
       "id": "c8b1ab64-0a8f-4555-9661-1ea29b4372fc",
       "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 6,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        864,
+        656
+      ],
+      "id": "1da9708c-1d2f-42f8-bb83-20324898a320",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {
+          "fileName": "=Eval_Run_{{$execution.id}}.xlsx"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -896,
+        576
+      ],
+      "id": "a0e9b661-c529-425b-8787-a3e044ec3d91",
+      "name": "Export to Excel"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fcba653b-531f-4d72-bb73-36fea07b5142",
+              "name": "execution_id",
+              "value": "={{$execution.id}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1152,
+        576
+      ],
+      "id": "7a2e5d06-a7f7-4faf-9279-c94d02f82421",
+      "name": "execution_id"
     }
   ],
   "pinData": {},
@@ -863,7 +931,13 @@
     },
     "Loop Over Items": {
       "main": [
-        [],
+        [
+          {
+            "node": "execution_id",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "Evaluation",
@@ -899,9 +973,9 @@
       "main": [
         [
           {
-            "node": "Update row(s)",
+            "node": "Merge",
             "type": "main",
-            "index": 0
+            "index": 1
           }
         ]
       ]
@@ -970,9 +1044,9 @@
       "main": [
         [
           {
-            "node": "Update row(s)",
+            "node": "Merge",
             "type": "main",
-            "index": 0
+            "index": 2
           }
         ]
       ]
@@ -992,9 +1066,9 @@
       "main": [
         [
           {
-            "node": "Update row(s)",
+            "node": "Merge",
             "type": "main",
-            "index": 0
+            "index": 3
           }
         ]
       ]
@@ -1052,9 +1126,9 @@
       "main": [
         [
           {
-            "node": "Update row(s)",
+            "node": "Merge",
             "type": "main",
-            "index": 0
+            "index": 4
           }
         ]
       ]
@@ -1063,9 +1137,9 @@
       "main": [
         [
           {
-            "node": "Update row(s)",
+            "node": "Merge",
             "type": "main",
-            "index": 0
+            "index": 5
           }
         ]
       ]
@@ -1074,7 +1148,29 @@
       "main": [
         [
           {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
             "node": "Update row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "execution_id": {
+      "main": [
+        [
+          {
+            "node": "Export to Excel",
             "type": "main",
             "index": 0
           }
@@ -1088,7 +1184,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "286636ab-3fa1-4d81-b2ef-74a9cb303864",
+  "versionId": "2323d708-fd0d-468a-9504-edef8113176a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "94e1edcc34a91a151fc2ec1b99597068a304e37fdb946fc806f00f97776fce3a"
