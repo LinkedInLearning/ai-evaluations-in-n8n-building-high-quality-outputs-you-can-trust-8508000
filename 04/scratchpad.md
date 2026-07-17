@@ -4,8 +4,9 @@
 ## 4.2 
 
 **Edit Fields**
-- Name: `execution_id`
+- Name: `Metadata`
 - Value: `{{$execution.id}}`
+- Time: `{{ $now.format('yyyy-MM-dd hh:mm') }}`
 - Include Other Input Fields: `All`
 
 **Save to File**
