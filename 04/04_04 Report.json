@@ -1,5 +1,5 @@
 {
-  "name": "04_04 Monitoring Nodes",
+  "name": "04_04 Report",
   "nodes": [
     {
       "parameters": {
@@ -7,7 +7,7 @@
           "values": [
             {
               "aggregation": "average",
-              "field": "eval_adv_correctness_score"
+              "field": "scoring_judge"
             }
           ]
         },
@@ -16,10 +16,10 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1.1,
       "position": [
-        352,
-        528
+        400,
+        64
       ],
-      "id": "e36793c5-cd37-42bf-ae2f-e1f5f5323b8f",
+      "id": "7ac6ab8b-c0e2-46b5-80e8-1f5431b7a1bf",
       "name": "Summarize Old Metrics"
     },
     {
@@ -28,7 +28,7 @@
           "values": [
             {
               "aggregation": "average",
-              "field": "=eval_adv_correctness_score"
+              "field": "=scoring_judge"
             }
           ]
         },
@@ -37,10 +37,10 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1.1,
       "position": [
-        352,
-        672
+        400,
+        208
       ],
-      "id": "93f7e52a-b1a4-49a7-bb47-a17d61874509",
+      "id": "32c1270a-dd55-416e-bc12-341a5128c883",
       "name": "Summarize New Metrics"
     },
     {
@@ -49,8 +49,8 @@
           "assignments": [
             {
               "id": "44d61d22-4c3b-47b7-8a55-9ee225c7019b",
-              "name": "eval_adv_correctness_score",
-              "value": "={{ $('Get row(s)').item.json.eval_adv_correctness_score }}",
+              "name": "scoring_judge",
+              "value": "={{ $('Scoring Judge').item.json.scoring_judge }}",
               "type": "number"
             }
           ]
@@ -60,10 +60,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        160,
-        528
+        208,
+        64
       ],
-      "id": "9344a3f4-31e8-4478-a6f4-a742a8b935f8",
+      "id": "3f30e9de-71a0-4493-adbb-33ec68e2ae58",
       "name": "Old Metrics"
     },
     {
@@ -72,15 +72,9 @@
           "assignments": [
             {
               "id": "44d61d22-4c3b-47b7-8a55-9ee225c7019b",
-              "name": "eval_adv_correctness_score",
-              "value": "={{ $json.eval_adv_correctness_score }}",
+              "name": "new_scoring_judge",
+              "value": "={{ $json.scoring_judge }}",
               "type": "number"
-            },
-            {
-              "id": "b0504123-122e-4768-aa60-a2438b3a7a3c",
-              "name": "",
-              "value": "",
-              "type": "string"
             }
           ]
         },
@@ -89,10 +83,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        160,
-        672
+        208,
+        208
       ],
-      "id": "1b96a1b2-d86f-4911-aa0d-50eabf7ac9dd",
+      "id": "f2c7a5d8-dfef-4423-ad90-7882290b18fa",
       "name": "New Metrics"
     },
     {
@@ -100,10 +94,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        592,
-        592
+        640,
+        128
       ],
-      "id": "3c754ac7-5ca3-4179-b002-dc02a7e82252",
+      "id": "c7e54d8f-bfb3-4282-ac40-4472118474e4",
       "name": "Merge1"
     },
     {
@@ -114,10 +108,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        768,
-        592
+        816,
+        128
       ],
-      "id": "94daf5f7-80f4-429b-8df1-b87b04b08e04",
+      "id": "4b954df3-c0e1-473b-a452-14746e675f2b",
       "name": "Aggregate1"
     },
     {
@@ -127,7 +121,7 @@
             {
               "id": "f51ea0ec-a4bc-41d7-87c8-1250937319b8",
               "name": "difference",
-              "value": "={{ ($json.data[1].average_eval_adv_correctness_score - $json.data[0].average_eval_adv_correctness_score) }}",
+              "value": "={{ ($json.data[1].scoring_judge - $json.data[0].scoring_judge) }}",
               "type": "number"
             }
           ]
@@ -137,10 +131,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        944,
-        592
+        992,
+        128
       ],
-      "id": "1e6b66cf-2a6c-40e2-9106-cd03334216ef",
+      "id": "230f2800-6550-4fa6-b4ef-948698de0d5e",
       "name": "Difference"
     },
     {
@@ -176,11 +170,27 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        1120,
-        592
+        1168,
+        128
       ],
-      "id": "1140ab87-02f9-405b-a62f-39a3e5e981cf",
+      "id": "92f82023-aa66-470e-be9f-672b8d94b0d5",
       "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "content": "## Alerts",
+        "height": 432,
+        "width": 1648,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        -64
+      ],
+      "typeVersion": 1,
+      "id": "493a8c6a-d485-487c-908b-89b59de31b83",
+      "name": "Sticky Note1"
     },
     {
       "parameters": {
@@ -193,34 +203,12 @@
       "type": "n8n-nodes-base.emailSend",
       "typeVersion": 2.1,
       "position": [
-        1280,
-        592
+        1328,
+        128
       ],
-      "id": "039c5154-a113-48e1-a84c-846cf9c98f9b",
+      "id": "98b31f14-ac8e-46e6-8d6e-c458a698d034",
       "name": "Send an Email",
-      "webhookId": "a74c1f23-d5a3-402f-af3d-c0c59920882c",
-      "credentials": {
-        "smtp": {
-          "id": "doCv6nywDpVhmyVw",
-          "name": "SMTP account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "content": "## Alerts",
-        "height": 432,
-        "width": 1648,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -160,
-        400
-      ],
-      "typeVersion": 1,
-      "id": "c761942d-a9eb-48ef-92c1-8c2768d4fdde",
-      "name": "Sticky Note"
+      "webhookId": "a74c1f23-d5a3-402f-af3d-c0c59920882c"
     }
   ],
   "pinData": {},
@@ -232,6 +220,17 @@
             "node": "Merge1",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize New Metrics": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -254,17 +253,6 @@
             "node": "Summarize New Metrics",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Summarize New Metrics": {
-      "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
@@ -317,15 +305,13 @@
   "active": false,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
+    "binaryMode": "separate"
   },
-  "versionId": "48ca4908-2e40-4b86-8fcb-b0d5f8b05128",
+  "versionId": "982771eb-5862-4ad0-9dfc-c266f89f10c3",
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "94e1edcc34a91a151fc2ec1b99597068a304e37fdb946fc806f00f97776fce3a"
+    "instanceId": "d4a4b34dba3ee3b7962c8920f1d1ae2e83302284e2d9036f405c172286e6d2fe"
   },
   "nodeGroups": [],
-  "id": "SO8s4sxN5Kwa4Xxd",
+  "id": "a5llcTQPyZJCO0ke",
   "tags": []
 }
