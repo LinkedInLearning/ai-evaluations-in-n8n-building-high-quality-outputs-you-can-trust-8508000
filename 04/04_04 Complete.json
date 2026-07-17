@@ -1070,8 +1070,8 @@
     },
     {
       "parameters": {
-        "fromEmail": "alerts@tobiaszwingmann.com",
-        "toEmail": "tobias@rapyd.ai",
+        "fromEmail": "you@your-email.com",
+        "toEmail": "you@your-email.com",
         "subject": "Alert: Metrics Drop!",
         "html": "=Eval Score dropped by {{ $json.difference.round(2) }}",
         "options": {}
