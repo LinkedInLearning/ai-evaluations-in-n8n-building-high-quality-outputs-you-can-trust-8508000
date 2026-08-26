@@ -14,7 +14,7 @@ AI evaluation is becoming a critical capability as organizations move from exper
 
 ## Instructor
 
-Tobias Zwingmann
+Tobias Zwingmann,
 AI Expert, Author, Keynote Speaker
 
 Tobias is a managing partner at RAPYD.AI, a vendor-neutral, independent boutique AI consulting firm specializing in AI prototyping, development, strategy, and training. As a former senior data scientist, he's seen the power of AI to revolutionize businesses—as well as the pitfalls of a tech-first approach. Today, he works with clients around the world to help them thrive in an AI-driven world, and future-proof their business—while focusing on empowering people instead of replacing them.                 
