@@ -4,8 +4,13 @@ This is the repository for the LinkedIn Learning course `AI Evaluations in n8n: 
 ![lil-thumbnail-url]
 
 ## Course Description
+AI evaluation is becoming a critical capability as organizations move from experimenting with LLM workflows to running them in production. Builders need reliable ways to detect hallucinations, catch regressions, and hold quality steady as prompts, data sources, and model versions change. This course teaches you how to build a robust evaluation pipeline in n8n so you always know how well your AI workflows are performing. Starting with a real RAG question-answering workflow as the subject under test, you construct a golden dataset, run built-in metrics like exact match and contains, and learn what those metrics can and can't tell you. From there, dive deeper into LLM-as-a-judge evaluation: writing structured judge prompts with scoring rubrics, building faithfulness checks, and making your judge more consistent and less biased. Finish by wiring everything into a pipeline that aggregates scores, fires alerts, and logs results over time, so evaluation becomes a living part of how you ship and maintain AI workflows.
 
-_See the readme file in the main branch for updated instructions and information._
+- Validate AI outputs using golden datasets and rule-based metrics like exact match and contains.
+- Apply LLM-as-a-judge evaluation to capture correctness, faithfulness, and domain nuance.
+- Write structured judge prompts with scoring rubrics inside n8n's LLM node.
+- Assemble an end-to-end evaluation pipeline that runs metrics and generates score summaries.
+- Automate alerts and log runs to a persistent store to track long-term quality trends.
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
